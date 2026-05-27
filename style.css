@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width:100%;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg,#eee,#ddd);
+    gap:2em;
+}
+.loader1,
+.loader2,
+.loader3{
+    width: 250px;
+    padding:10px;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+    background:white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.loader1 .rotate{
+    width: 70px;
+    height:70px;
+    border-radius:50%;
+    border: 5px solid gray;
+    border-top: 5px solid blue;
+    animation:rotate infinite 1s;
+}
+@keyframes rotate{
+    0%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
+}
+.loader1 p,
+.loader2 p,
+.loader3 p{
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: blue;
+    font-weignt:650;    
+}
+.loader2 .box{
+    margin:20px;
+    width:100px;
+    height:50px;
+    border:2px solid blue;
+    border-radius:5px;
+    animation: box infinite 2s;
+
+}
+@keyframes box{
+    0%,100%{
+        rotate:45deg;
+        box-shadow:inset 100px 0 blue;
+        border:2px solid blue;
+    }
+    50%{
+        rotate:-45deg;
+        box-shadow:inset -100px 0  red;
+        border:2px solid red;
+    }
+}
+.loader3 .boxes{
+    display:flex;
+    gap:10px;
+    margin:30px;
+    
+}
+.loader3 .boxes span{
+    width:20px;
+    height:20px;
+    background:blue;
+    animation: move infinite 1s;
+}
+.loader3 .boxes span:nth-child(2){
+    animation-delay: 0.4s;
+}
+.loader3 .boxes span:nth-child(3){
+    animation-delay: 0.6s;
+}
+.loader3 .boxes span:nth-child(4){
+    animation-delay: 0.8s;
+}
+.loader3 .boxes span:nth-child(5){
+    animation-delay: 1s;
+}
+@keyframes move{
+    0%{
+        background:#ddd;
+    }
+}
